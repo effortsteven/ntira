@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <!-- fav icon and mobile theme -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ render_static('assets/img/kit/nic-fav-32.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ render_static('assets/img/kit/nic-fav-16.png')}}">
+    <meta name="theme-color" content="#1f5a2c">
+
+
+    <title>
+        Testimonials | NIC
+    </title>
+    <!--     Fonts and icons     -->
+    {% include "common/css_links.html.twig" %}
+</head>
+
+<body class="about-us ">
+
+<div id="wrap-loader" >
+    <div id="loader" class="text-center">
+        <div class="loader-div"></div>
+        <h3 style="color: teal; font-size: 20px;font-family:'Samsung Sharp Sans Regular Regular';">Loading....</h3>
+    </div>
+</div>
+
+{% block navbar %}
+    {% include "common/navbar.html.twig" %}
+{% endblock %}
+
+<div class="page-header header-filter header-small" data-parallax="true" style="background-image: url({{ render_static('assets/img/kit/bg21.jpg') }});">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 ml-auto mr-auto text-center t_c_top_title">
+                <h1 class="title" style="font-family:'Samsung Sharp Sans Regular Regular'; display: inline;">Testimonials</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main main-raised tender-raised-cont testim-div">
+    <div class="container col-lg-12">
+
+        <div class=" text-center">
+            <div  class="row testimonials_div">
+                {% if testimons %}
+                    {% for testimon in testimons %}
+                        <div class="col-md-4">
+                            <div class="card card-blog">
+                                <div class="card-header card-header-image">
+                                    <a href="#">
+                                        <img class="img" src="{{ render_static(testimon.image) }}">
+                                    </a>
+                                </div>
+                                <div class="card-body">
+
+                                    <p class="card-category text-black">
+                                        {{ testimon.company_description }}
+                                    </p>
+
+                                    <div class="card-description">
+                                        <div >
+                                            <div style="font-style: italic; border-left: 1px solid orange; font-size: 12.5px; padding-left: 2px">
+                                                <span style="font-size: 25px">"</span>
+
+                                                {{ testimon.customer_description }}
+
+                                                <span style="font-size: 25px">"</span>
+                                            </div>
+                                            <footer>
+                                                <cite>
+                                                    {{ testimon.customer_name }}
+                                                </cite>
+                                            </footer>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    {% else  %}
+                     <div class="custom-danger-alert alert-animated">
+                        <span><i class="icon-alert"></i> &nbsp&nbsp Currently no Testimonials !</span>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        </h5>
+    </div>
+</div>
+<footer class="footer ">
+    <div class="container">
+        <nav class="pull-left">
+            <ul>
+                <li>
+                    <a href="/" class=" sys-color-text">
+                        Home
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="copyright pull-right font-weight-normal sys-color-text" >
+            &copy;
+            <script>
+                document.write(new Date().getFullYear())
+            </script> &nbsp National Insurance Corporation (T) Limited.
+        </div>
+    </div>
+</footer>
+</body>
+</html>
+
+{% include "common/script_links.html.twig" %}

@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <!-- fav icon and mobile theme -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ render_static('assets/img/kit/nic-fav-32.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ render_static('assets/img/kit/nic-fav-16.png')}}">
+    <meta name="theme-color" content="#1f5a2c">
+
+    <title>
+        Home | NIC
+    </title>
+
+    <!--     Fonts and icons     -->
+    {% include "common/css_links.html.twig" %}
+
+</head>
+
+<body class="sections-page  section-white ">
+
+<div id="wrap-loader">
+    <div id="loader" class="text-center">
+        <div class="loader-div"></div>
+        <h3 style="color: teal; font-size: 20px;font-family:'Samsung Sharp Sans Regular Regular';">Loading....</h3>
+    </div>
+</div>
+
+<div class="header-2">
+    {% block navbar %}
+        {% include "common/navbar.html.twig" %}
+    {% endblock %}
+    <div class="land-page-1">
+        <div class="page-header header-filter"
+             style="background-image: url('{{ render_static("assets/img/kit/bg21.jpg") }}');">
+            <div class="container land-page-cont-1" style="margin-right: 0; margin-left: 0; width: 100%; max-width: 100%;">
+                <div class="row">
+                    <div class="col-md-2 text-right mt-auto mb-auto job-div">
+                        <img src="{{ render_static("assets/img/kit/taifa.png") }}" alt="" style="width: 50%;">
+                    </div>
+                    <div class="col-md-8 ml-auto mr-auto text-center" >
+
+                        <h2 id="animate_text" class="title " style="font-family:'Samsung Sharp Sans Regular Regular';">
+                            W</h2>
+                        <h4>The number one Tanzanian Insurance company, that has been serving Tanzania <br>
+                            for about <span class="app-time"></span> years with reliable services at affordable prices.
+                        </h4>
+                        <br>
+                        <h5 class="call-us-mid">
+                            Let's hear from you
+                            Call us FREE<br>
+                            <i class="icon-phone"></i>&nbsp &nbsp
+                            <span style="color: #ffa500 ">080 011 0041</span>
+                        </h5>
+                        <div class="buttons top-icons mainShotcuts">
+                            {% include "common/main_shotcuts.html.twig" %}
+                        </div>
+                    </div>
+                    <div class="col-md-2 hidden-xs text-left mt-auto mb-auto job-div"  >
+                        <img src="{{ render_static("assets/img/kit/nic.png") }}" alt="" style="width: 90%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="main" style=" border-radius: 10px; margin: 0px 5px; box-shadow: -2px 0 3px 3px rgba(0,0,0,.2)">
+
+    <div class="cd-section" style="padding-bottom: 40px;">
+        <div class="container" style=" max-width: 100%;padding:0 30px;">
+            <div class="row">
+                <div class="col-md-3 top-icons" style=" margin-top: 5px">
+                    <div class="card card-profile">
+                        <div class="card-body">
+                            <h5 class="card-title sys-color-text text-center"
+                                style="font-family: SamsungSharpSans-Bold;">
+                                <img src="{{ render_static('assets/img/kit/staffs/md.png') }}" alt="Managing Director"
+                                     width="50px;" style="position:relative;float:left; border-radius: 50%"
+                                     class="md-img">
+                                Message from the Managing Director</h5>
+
+                            <p class="card-descriptio" style="font-size:13px">
+                                It gives me great pleasure to welcome you, on behalf of the Board of Directors,
+                                Management and Staffs to our website. These are exciting times for us at National
+                                Insurance Corporation (NIC) as we continue
+                                operations at such a competitive insurance market.
+                                <!-- <a href="" class="text-info" style="margin: 0px">...Read more</a> -->
+                            </p>
+                            <h6 class="card-category text-left">
+                                <span class="sys-color-text" style="font-size:10px"> Sam Kamanga</span>
+                                <br>
+                                <small class=" text-muted" style="font-size:8px"> Managing Director</small>
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 news_feeds_wrapp" style=" margin-top: 5px">
+                    <div class="card card-raised card-carousel">
+                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                            {% if galleries %}
+                                <ol class="carousel-indicators">
+                                    {% for photo in galleries_photos | slice(0,5) %}
+                                        <li data-target="#carouselExampleIndicators" data-slide-to="{{ loop.index - 1 }}"
+                                            {% if loop.first %}class="active"{% endif %}></li>
+                                    {% endfor %}
+                                </ol>
+                                <div class="carousel-inner">
+                                    {% for photo in galleries_photos | slice(0,5) %}
+                                        <div class="carousel-item {% if loop.first %}active{% endif %} ">
+                                            <img class="d-block w-100 b-r-7" src="{{ render_static(photo.image_path) }}"
+                                                 alt="First slide">
+                                            <div class="carousel-caption d-none d-md-block">
+                                                <p class="img-caption">
+                                                    {{ photo.gallery.title }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+
+                                    <!--  <div class="carousel-item">
+                                         <img class="d-block w-100 b-r-7" src="assets/img/kit/slide_img/slide10.jpg" alt="First slide">
+                                         <div class="carousel-caption d-none d-md-block">
+                                             <h4>
+                                                 <i class="material-icons">location_on</i> Yellowstone National Park, United States
+                                             </h4>
+                                         </div>
+                                     </div> -->
+
+                                </div>
+                            {% else %}
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                </ol>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active ">
+                                        <img class="d-block w-100 b-r-7"
+                                             src="{{ render_static('assets/img/kit/slide_img/slide1.jpg') }}"
+                                             alt="First slide">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <p class="img-caption">
+                                                caption text here.......
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100 b-r-7"
+                                             src="{{ render_static('assets/img/kit/slide_img/slide2.jpg') }}"
+                                             alt="First slide">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h4>
+                                                <i class="material-icons">location_on</i> Yellowstone National Park,
+                                                United States
+                                            </h4>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100 b-r-7"
+                                             src="{{ render_static('assets/img/kit/slide_img/slide3.jpg') }}"
+                                             alt="First slide">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h4>
+                                                <i class="material-icons">location_on</i> Yellowstone National Park,
+                                                United States
+                                            </h4>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100 b-r-7"
+                                             src="{{ render_static('assets/img/kit/slide_img/slide4.jpg') }}"
+                                             alt="First slide">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h4>
+                                                <i class="material-icons">location_on</i> Yellowstone National Park,
+                                                United States
+                                            </h4>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100 b-r-7"
+                                             src="{{ render_static('assets/img/kit/slide_img/slide5.jpg') }}"
+                                             alt="First slide">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h4>
+                                                <i class="material-icons">location_on</i> Yellowstone National Park,
+                                                United States
+                                            </h4>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100 b-r-7"
+                                             src="{{ render_static('assets/img/kit/slide_img/slide6.jpg') }}"
+                                             alt="First slide">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h4>
+                                                <i class="material-icons">location_on</i> Yellowstone National Park,
+                                                United States
+                                            </h4>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100 b-r-7"
+                                             src="{{ render_static('assets/img/kit/slide_img/slide7.jpg') }}"
+                                             alt="First slide">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h4>
+                                                <i class="material-icons">location_on</i> Yellowstone National Park,
+                                                United States
+                                            </h4>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100 b-r-7"
+                                             src="{{ render_static('assets/img/kit/slide_img/slide8.jpg') }}"
+                                             alt="First slide">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h4>
+                                                <i class="material-icons">location_on</i> Yellowstone National Park,
+                                                United States
+                                            </h4>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100 b-r-7"
+                                             src="{{ render_static('assets/img/kit/slide_img/slide9.jpg') }}"
+                                             alt="First slide">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h4>
+                                                <i class="material-icons">location_on</i> Yellowstone National Park,
+                                                United States
+                                            </h4>
+                                        </div>
+                                    </div>
+
+                                    <!--  <div class="carousel-item">
+                                         <img class="d-block w-100 b-r-7" src="assets/img/kit/slide_img/slide10.jpg" alt="First slide">
+                                         <div class="carousel-caption d-none d-md-block">
+                                             <h4>
+                                                 <i class="material-icons">location_on</i> Yellowstone National Park, United States
+                                             </h4>
+                                         </div>
+                                     </div> -->
+
+                                </div>
+                            {% endif %}
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                               data-slide="prev">
+                                <i class="material-icons"></i>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                               data-slide="next">
+                                <i class="material-icons"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 call-us-mid news_feeds_wrapp" style=" margin-top: 5px">
+                    <div class="card card-profile">
+                        <div class="card-body">
+                            <h5 class="card-title sys-color-text text-center"
+                                style="font-family: SamsungSharpSans-Bold;">
+                                <img src="{{ render_static('assets/img/kit/staffs/md.png') }}" alt="Managing Director"
+                                     width="50px;" style="position:relative;float:left;border-radius: 50%">
+                                Message from the Managing Director</h5>
+
+                            <p class="card-descriptio" style="font-size:13px">
+                                It gives me great pleasure to welcome you, on behalf of the Board of Directors,
+                                Management and Staffs to our website.<span id="dots">....</span><span id="more"> These are exciting times for us at National
+                                            Insurance Corporation (NIC) as we continue
+                                            operations at such a competitive insurance market.
+                                            </span>
+                                <span onclick="readMore()" id="myBtn" style="cursor: pointer; color:rgb(70, 157, 245);">Read more</span>
+                                <!-- <a href="" class="text-info">...Read more</a> -->
+                            </p>
+                            <h6 class="card-category text-left">
+                                <span class="sys-color-text" style="font-size:10px"> Sam Kamanga</span>
+                                <br>
+                                <small class=" text-muted" style="font-size:8px"> Managing Director</small>
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 news_feeds_wrapp">
+                    <div class="card card-contact card-raised">
+                        <div class="card-header card-header-info text-center">
+                            <h5 class="card-title" style="font-family: SamsungSharpSans-Bold">News Feed</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                {% if  news_feeds %}
+                                    {% for news_feed in news_feeds %}
+                                        <div class='col-lg-12 feeds_div'>
+                                            <div class=' col-lg-9 col-md-12 col-sm-12 btn-info news_dates'>
+                                                <div class='col-news-date' style="display:inline-block">
+                                                    {{ news_feed.current_date|date('dS M') }}
+                                                    {% if news_feed.news_type == 2 %}
+                                                        - {{ news_feed.end_date|date('dS M') }}
+                                                    {% endif %}
+                                                </div>
+                                                <div class='new_news'>
+                                                    New
+                                                </div>
+                                            </div>
+                                            <div class=' col-lg-12 news-cont'>
+                                                {{ news_feed.description | slice(0, 50) }}
+                                                ....<a style="cursor: pointer;" href="/readmore/{{ news_feed.id }}/"
+                                                       class="text-info">Read more</a>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                {% else %}
+                                    <div class="col-lg-12">
+                                        <label class=" col-lg-12 news-cont text-center">
+                                            No News Founds
+                                        </label>
+                                    </div>
+                                {% endif %}
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 text-center">
+                                    <a href="/news_and_events/" class="more-new-btn" title="More News"
+                                       data-toggle="tooltip" data-placement="bottom"><i class=" icon-menu"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="cd-section">
+        <!-- <div class="col-md-12">
+                <div class="content-divider text-muted form-group"><span><h2 class="sys-color-text" style="font-weight:500; text-transform: uppercase">Why insure with NIC</h2></span></div>
+        </div> -->
+        <!-- <div class="col-lg-12 header-filter" style="background-image: url(assets/img/kit/bg21.jpg); height: 50px;"></div> -->
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="content-divider text-muted form-group"><span>
+                                    <h3 class="sys-color-text">Why insure<span class="brk-txt-mob"></span> with NIC</h3>
+                                </span></div>
+                </div>
+                <div class="col-md-9 ml-auto mr-auto">
+
+                    <h5 class="descriptio" style="color:#4f5962">
+                        We have over <span class="app-time"></span> years of experience and operating in every
+                        region in Tanzania. NIC has proven to be a reliable partner so let us walk your journey with
+                        you.
+                    </h5>
+                </div>
+                <div class="col-md-12">
+                    <h3 class="sys-color-text">Popular Products</h3>
+                </div>
+                <div class="col-md-12 product-pag">
+                    <ul class="nav flexi-nav" data-tabs="tabs" id="flexiselDemo1">
+                        <li class="nav-item">
+                            <a href="https://motor.nictanzania.co.tz">
+                                <div class="col-md-12">
+                                    <div class="card card-blog pop-prod">
+                                        <div class="card-header card-header-image" style="background:none">
+                                            <img src="{{ render_static('assets/img/kit/products/car.png') }}" alt="">
+                                        </div>
+                                        <div class="card-body">
+                                            <h6 class="card-category " style="color:#4f5962">Motor Insurance</h6>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/life_products/">
+                                <div class="col-md-12">
+                                    <div class="card card-blog pop-prod">
+                                        <div class="card-header card-header-image" style="background:none">
+                                            <img src="{{ render_static('assets/img/kit/products/product_2.png') }}"
+                                                 alt="">
+                                        </div>
+                                        <div class="card-body">
+                                            <h6 class="card-category " style="color:#4f5962">Whole Life Assurance</h6>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/non_life_products/">
+                                <div class="col-md-12">
+                                    <div class="card card-blog pop-prod">
+                                        <div class="card-header card-header-image" style="background:none">
+                                            <img src="{{ render_static('assets/img/kit/products/plane.png') }}" alt="">
+                                        </div>
+                                        <div class="card-body">
+                                            <h6 class="card-category " style="color:#4f5962">Aviation Insurance</h6>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/life_products/">
+                                <div class="col-md-12">
+                                    <div class="card card-blog pop-prod">
+                                        <div class="card-header card-header-image" style="background:none">
+                                            <img src="{{ render_static('assets/img/kit/products/pen.jpg') }}" alt="">
+                                        </div>
+                                        <div class="card-body">
+                                            <h6 class="card-category " style="color:#4f5962">Pen-save Plan</h6>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-9 ml-auto mr-auto">
+                    <h5 class="" style="color:#4f5962">In the case of Claims we got you covered, our customer service
+                        is up and running 24/7 call us for FREE <span style="color:orange">080 011 0041</span> or visit our
+                        nearest office.
+                    </h5>
+                </div>
+                <div class="col-md-6">
+                    <div class="info">
+                        <div class="icon icon-info">
+                            <i class="material-icons">info</i>
+                        </div>
+                        <h4 class="info-title" style="font-family:SamsungSharpSans-Bold">Notify Your Claim</h4>
+                        <p style="color:#4f5962; font-size: 16px">
+                            We understand claims can be a headache. In the case of an unfortunate event,
+                            NIC will hold your hand and work with you through the claims process.
+                        </p>
+                    </div>
+                </div>
+                <!-- <div class="col-md-4">
+                    <div class="info">
+                        <div class="icon icon-inf">
+                            <i class="material-icons">schedule</i>
+                        </div>
+                        <h4 class="info-title" style="font-family:SamsungSharpSans-Bold">Processing</h4>
+                        <p>
+                            how process in time......
+                        </p>
+                    </div>
+                </div> -->
+                <div class="col-md-6">
+                    <div class="info">
+                        <div class="icon icon-success">
+                            <i class="material-icons">check_circle</i>
+                        </div>
+                        <h4 class="info-title" style="font-family:SamsungSharpSans-Bold">Response</h4>
+                        <p style="color:#4f5962; font-size: 16px">
+                            Customer first is one of our key values. Your claim will be process at the minimum time as
+                            can possibly be done.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cd-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="info text-center">
+                        <div class="icon icon-success">
+                            <i class="material-icons"></i>
+                        </div>
+                        <h4 class="info-title" style="font-family:SamsungSharpSans-Bold">
+                            Benefits
+                        </h4>
+                        <p style="color:#4f5962">
+                        <div class="row text-left">
+
+                            <div class="col-sm-2" style="max-width:16%; color: rgba(31, 90, 44,1)">
+                                <i class="material-icons">check_circle</i>
+                            </div>
+                            <div class="col-sm-10" style="max-width:83%;color:#4f5962;">
+                                We have covered 80% of Tanzania
+                            </div>
+
+                            <div class="col-sm-2" style="max-width:16%; color:rgba(31, 90, 44,1)">
+                                <i class="material-icons">check_circle</i>
+                            </div>
+                            <div class="col-sm-10" style="max-width:83%;color:#4f5962;">
+                                Over 24 insurance packages
+                            </div>
+
+                            <div class="col-sm-2" style="max-width:16%; color: rgba(31, 90, 44,1)">
+                                <i class="material-icons">check_circle</i>
+                            </div>
+                            <div class="col-sm-10" style="max-width:83%;color:#4f5962;">
+                                Claims are paid in short time
+                            </div>
+                        </div>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="info">
+                        <div class=" manual-flip">
+                            <div class="card card-rotat">
+                                <div class=" front-background"
+                                     style="background-image: url('{{ render_static("assets/img/kit/card-blog5.jpg") }}'); border-radius: 10px;">
+                                    <div class="card-body">
+                                        <h3 class=""
+                                            style="color: white; font-family:'Samsung Sharp Sans Regular Regular';font-weight:normal;">
+                                            Subscribe Newsletter</h3>
+
+                                        <p class="text-white">
+                                            Please provide us your email and be the first to receive our news and
+                                            events.
+                                        </p>
+                                        <div class="form-group form-file-upload">
+                                            <div class="input-group" style="padding-left: 15px;">
+                                                <input type="email" class="subscribe_mail form-control"
+                                                       placeholder="Enter Your Email...."
+                                                       style="width: 90%; position: absolute; background: white; border-radius: 30px;padding-left: 10px;">
+                                                <button id="subscribe" type="button"
+                                                        class="btn btn-fab btn-round btn-subsc">
+                                                    <i class="material-icons"
+                                                       style="margin-top: 3px; margin-left: 3px;">arrow_forward_ios</i>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cd-section mb-3 pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="text-center col-lg-12">
+                    <div class="col-md-12" style="margin-bottom: 80px;">
+                        <div class="content-divider text-muted form-group"><span>OUR CLIENTS</span></div>
+                    </div>
+                    <div class="row" style="filter:grayscale(30%);justify-content: center;">
+
+
+                        <div class="col-md-2 img-mob">
+                            <img style="width: 40%" src="{{ render_static('assets/img/kit/clients/tpa.png') }}">
+                        </div>
+
+                        <div class="col-md-2 img-mob">
+                            <img style="width: 40%" src="{{ render_static('assets/img/kit/clients/tansco.jpg') }}">
+                        </div>
+
+                        <div class="col-md-2 img-mob">
+                            <img style="width: 50%" src="{{ render_static('assets/img/kit/clients/tanapa.png') }}">
+                        </div>
+
+
+                        <div class="col-md-2 img-mob">
+                            <img style="width: 50%" src="{{ render_static('assets/img/kit/clients/muhimbili.jpg') }}">
+                        </div>
+
+                        <div class="col-md-2 img-mob">
+                            <img style="width: 40%" src="{{ render_static('assets/img/kit/clients/tfda.png') }}">
+                        </div>
+
+                        <div class="col-md-2 img-mob">
+                            <img style="width: 40%" src="{{ render_static('assets/img/kit/clients/tcra.png') }}">
+                        </div>
+
+                        <div class="col-md-2 img-mob">
+                            <img style="width: 60%" src="{{ render_static('assets/img/kit/clients/atcl.png') }}">
+                        </div>
+                        <div class="col-md-2 img-mob">
+                            <img style="width: 50%" src="{{ render_static('assets/img/kit/clients/bot.png') }}">
+                        </div>
+
+                        <div class="col-md-2 img-mob">
+                            <img style="width: 60%" src="{{ render_static('assets/img/kit/clients/tra.png') }}">
+                        </div>
+
+                        <div class="col-md-2 img-mob">
+                            <img style="width: 50%" src="{{ render_static('assets/img/kit/clients/udsm.png') }}">
+                        </div>
+                        <div class="col-md-2 img-mob">
+                            <img style="width:40%" src="{{ render_static('assets/img/kit/clients/udom.png') }}">
+                        </div>
+
+                        <div class="col-md-2 img-mob">
+                            <img style="width: 40%" src="{{ render_static('assets/img/kit/clients/mzumbe.png') }}">
+                        </div>
+
+                        <div class="col-md-2 img-mob">
+                            <img style="width: 40%" src="{{ render_static('assets/img/kit/clients/ttcl.png') }}">
+                        </div>
+
+                        <div class="col-md-2 img-mob">
+                            <img style="width: 40%" src="{{ render_static('assets/img/kit/clients/nssf.jpg') }}">
+                        </div>
+
+
+                        <div class="col-md-2 img-mob">
+                            <img style="width: 45%" src="{{ render_static('assets/img/kit/clients/ccm.png') }}">
+                        </div>
+
+                        <div class="col-md-2 img-mob">
+                            <img style="width: 80%" src="{{ render_static('assets/img/kit/clients/msd.png') }}">
+                        </div>
+
+                        <div class="col-md-2 img-mob">
+                            <img style="width: 70%;" src="{{ render_static('assets/img/kit/clients/jakaya.jpg') }}">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fader-div">
+        <div class="fader element-animation hide-app">
+        </div>
+        <a class="btn btn-just-icon btn-round text-white btn-icon btn-download-app hide-app"
+                style="background-color: rgb(31, 90, 44)" data-toggle="tooltip" data-html="true" data-placement="top"
+                title="Download<br> Motor App">
+            <i class="material-icons">get_app</i>
+        </a>
+    </div>
+    <div>
+        <ul class="fab-menu fab-menu-fixed fab-menu-bottom-right" data-fab-toggle="click" data-fab-state="closed">
+            <li>
+                <a class="fab-menu-btn btn btn-just-icon btn-round btn-linkedin btn-icon hide-app" data-toggle="tooltip"
+                   data-placement="left" title="Chat with us!">
+                    <i class="fab-icon-open material-icons">chat</i>
+                    <i class="fab-icon-close material-icons">close</i>
+                </a>
+
+                <ul class="fab-menu-inner">
+                    <li>
+                        <div class="chat-div">
+                            <div class="chat-div-header">
+                                <img src="{{ render_static('assets/img/kit/user_prof.png') }}" height="40px" style="display:inline"
+                                     alt="user_logo"/>
+                                <p class="user-num" style="display:inline; ">
+
+                                </p>
+                            </div>
+                            <div class="chat-div-messages">
+                                <div class="col-lg-12 reply">
+                                    <p>Hi <span class="user-num" style="color:#0976b4"></span>!</p>
+                                </div>
+                            </div>
+                            <div class="message-input">
+                                <div class="wrap">
+                                    <input type="text" class="form-control" placeholder="Write your message..."/>
+                                    <button class="submit btn btn-just-icon btn-round btn-tumblr btn-icon">
+                                        <i class="material-icons">send</i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat-div-num">
+                            <div class="message-input">
+                                <div class="wrap">
+                                    <input type="text" class="form-control" placeholder="use your number / email..."/>
+                                    <button class="submit-num btn btn-just-icon btn-round btn-tumblr btn-icon">
+                                        <i class="material-icons">send</i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <footer class="footer footer-white footer-big" style="box-shadow: 0 1px 10px 1px rgba(0,0,0,.3)">
+        <div class="container">
+            <div class="content" style="color: rgba(16, 94, 58, 0.8);">
+                <div class="row">
+                    <div class="col-md-3">
+                        <h5 style="font-family:SamsungSharpSans-Bold">Head Quarters</h5>
+                        <ul class="links-vertical">
+                            <li>
+                                <a>
+                                    <i class=" icon-location4"></i> Samora Avenue/ Pamba Road
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <i class=" icon-location4"></i> 9264 Dar es Salaam,Tanzania
+                                </a>
+                            </li>
+                            <li>
+                                <a title="Email address">
+                                    <i class=" icon-mention"></i> info-nic@nictanzania.co.tz
+                                </a>
+                            </li>
+                            <li>
+                                <a title="Phone number">
+                                    <i class=" icon-phone"></i> +255 22 211 382 5/6
+                                </a>
+                            </li>
+                            <li>
+                                <a title="Fax">
+                                    <i class=" icon-printer4"></i> +255 22 211 3423
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-2">
+                        <h5 style="font-family:SamsungSharpSans-Bold">Our</h5>
+                        <ul class="links-vertical">
+                            <li>
+                                <a href="/about/#company_structure">
+                                    Company Structure
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/about/#visionMission">
+                                    Vision & Mission
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/about/#background">
+                                    Background
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/contact/">
+                                    Branches
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h5 style="font-family:SamsungSharpSans-Bold">Related Sites</h5>
+                        <ul class="links-vertical">
+                            <li>
+                                <a href="http://www.brela.go.tz/">
+                                    Business Registrations and Licensing Agency (BRELA)
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://www.tira.go.tz/">
+                                    Tanzania Insurance Regulatory Authority (TIRA)
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.tra.go.tz">
+                                    Tanzania Revenue Authority (TRA)
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-3">
+                        <h5 style="font-family:SamsungSharpSans-Bold">Follow Us</h5>
+                        <ul class="social-buttons">
+                            <li>
+                                <a href="https://twitter.com/nic_tanzania"
+                                   class="btn btn-just-icon btn-link btn-twitter">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/nictanzanialtd/"
+                                   class="btn btn-just-icon btn-link btn-facebook">
+                                    <i class="fa fa-facebook-square"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/nic_tanzania"
+                                   class="btn btn-just-icon btn-link btn-instagram">
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <a href="https://nictanzania.co.tz/webmail" class="btn btn-round btn-sm btn-linkedin">
+                            <i class="icon-envelop5"></i>&nbsp;&nbsp; Staff Mail
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="copyright pull-center sys-color-text font-weight-normal">
+                Copyright &#xA9;
+                <script>
+                    document.write(new Date().getFullYear())
+                </script>
+                National Insurance Corporation (T) Limited.
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
+
+{% include "common/script_links.html.twig" %}
+<script type="text/javascript">
+    $(document).ready(function () {
+        // $(".news_div").html(news_feeds().slice(0, 5));
+        // $(".picture_list").html(home_slideshow().slice(0, 10));
+    });
+
+    $('.app-time').text(now());
+
+
+    // on click subscribe button send email to database
+    $('#subscribe').click(function () {
+        var mail = $('.subscribe_mail').val();
+        if (isEmail(mail)) {
+            var link = $(this).attr("action");
+            var method = $(this).attr("method");
+            $.ajax({
+                url: "/news_and_events/",
+                method: "POST",
+                data:{
+                    "email":mail
+                }
+            }).done(function (response) {
+                $.notify({
+                    // options
+                    message: '<i class="icon-checkmark3" style="font-size:20px;"></i>&nbsp &nbsp &nbsp You have successful subscribed to our news mail !'
+                }, {
+                    // settings
+                    type: 'success',
+                    mouse_over: 'pause'
+                });
+                setInterval(function () {
+                    $('.subscribe_mail').val("");
+                },1000);
+            });
+        } else {
+            $.notify({
+                // options
+                message: '<i class=" icon-cross2" style="font-size:20px;"></i>&nbsp &nbsp &nbsp Please provide a valid email !'
+            }, {
+                // settings
+                type: 'danger',
+                mouse_over: 'pause'
+            });
+        }
+
+    });
+
+
+    // start function open_pager
+    function open_pager(id) {
+        window.location.href = "news/readmore.html?news=" + id;
+    }
+
+    //end function open_pager
+
+    animate_text('elcome to National Insurance Corporation');
+    $(document).ready(function () {
+        $("#flexiselDemo1").flexisel({
+            visibleItems: 4,
+            itemsToScroll: 1,
+            animationSpeed: 400,
+            enableResponsiveBreakpoints: true,
+            responsiveBreakpoints: {
+                portrait: {
+                    changePoint: 480,
+                    visibleItems: 3
+                },
+                landscape: {
+                    changePoint: 640,
+                    visibleItems: 3
+                },
+                tablet: {
+                    changePoint: 768,
+                    visibleItems: 3
+                }
+            }
+        });
+    });
+    $(document).ready(function () {
+
+        $('.btn-download-app').tooltip('show')
+    })
+</script>

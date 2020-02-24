@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <!-- fav icon and mobile theme -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ render_static('assets/img/kit/nic-fav-32.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ render_static('assets/img/kit/nic-fav-16.png')}}">
+    <meta name="theme-color" content="#057855fc">
+
+    <title>
+       News & Events | NIC
+    </title>
+
+    <!--     Fonts and icons     -->
+   {% include "common/css_links.html.twig" %}
+   </head>
+
+
+<body class="about-us ">
+
+<div id="wrap-loader" >
+    <div id="loader" class="text-center">
+        <div class="loader-div"></div>
+        <h3 style="color: teal; font-size: 20px;font-family:'Samsung Sharp Sans Regular Regular';">Loading....</h3>
+    </div>
+</div>
+
+{% block navbar %}
+    {% include "common/navbar.html.twig" %}
+{% endblock %}
+<div class="page-header header-filter header-small" data-parallax="true"
+     style="background-image: url({{ render_static('assets/img/kit/bg21.jpg') }});">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 ml-auto mr-auto text-center t_c_top_title">
+                <h1 class="title" style="font-family:'Samsung Sharp Sans Regular Regular'; display: inline;">News
+                    &nbsp</h1>
+                <span class="text-white" style=" font-weight: 500">&amp</span>
+                <h1 class="title" style="font-family:'Samsung Sharp Sans Regular Regular'; display: inline;">&nbsp
+                    Events</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main main-raised tender-raised-cont">
+    <div class="container col-lg-12">
+
+        <div class=" text-center pb-3 pt-3">
+            <div class="text-right">
+
+                <label style=""></label>
+
+            </div>
+            <div class="row mb-5">
+
+                <div class="col-md-8 col-sm-12">
+                    <div class="text-left">
+                        <label style="color: rgba(60, 72, 88,1);font-size: 16px"><i class="icon-history"></i> Our Recent
+                            News & Events</label>
+
+                        <div id="news_radio">
+
+                            <div class="form-check form-check-radio form-check-inline">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="news_events" value="0" checked>
+                                    All
+                                    <span class="circle">
+                                            <span class="check"></span>
+                                        </span>
+                                </label>
+                            </div>
+                            <div class="form-check form-check-radio form-check-inline">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="news_events" value="1">
+                                    News Only
+                                    <span class="circle">
+                                            <span class="check"></span>
+                                        </span>
+                                </label>
+                            </div>
+                            <div class="form-check form-check-radio form-check-inline disabled">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="news_events" value="2">
+                                    Events Only
+                                    <span class="circle">
+                                            <span class="check"></span>
+                                        </span>
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    {% if news_feeds %}
+                        {% for news_feed in news_feeds %}
+                            {% if news_feed.news_type == 1 %}
+                                <div class="news-div col-md-12 mt-3 mb-3 news">
+                                    <div class="row">
+                                        <div class="col-md-5" style=" padding: 0px 0px;">
+                                            <img class="news-img" src="{{ render_static(news_feed.news_image) }}">
+                                        </div>
+                                        <div class="col-md-7" style="padding: 0px 0px">
+                                            <!-- news title -->
+                                            <h5 style="">
+                                                {{ news_feed.title }}
+                                            </h5>
+                                            <div class="col-md-12 mt-2" style="">
+                                                <!-- news body -->
+                                                <p class="pb-5">
+                                                    {{ news_feed.description }}
+                                                </p></div>
+                                            <div class="col-md-12 mt-3 mb-3"
+                                                 style="position: absolute; bottom: 0px; width: 100%; ">
+                                                <!-- provide a news url -->
+                                                {% if news_feed.news_link %}
+                                                    <a href="{{ news_feed.news_link }}"
+                                                       class="btn btn-fab btn-round btn-sm sys-btn-raise" title="Visit page"
+                                                       data-toggle="tooltip" data-placement="bottom"
+                                                       style="background: #037ef3">
+                                                        <i class="material-icons">open_in_new</i>
+                                                    </a>
+                                                {% else %}
+                                                    <a href="/readmore/{{ news_feed.id }}/ "
+                                                       class="btn btn-fab btn-round btn-sm sys-btn-raise" title="Visit page"
+                                                       data-toggle="tooltip" data-placement="bottom"
+                                                       style="background: #037ef3">
+                                                        <i class="material-icons">open_in_new</i>
+                                                    </a>
+                                                {% endif %}
+                                                </button>
+                                                <button onclick="share(' + news_id + ')"
+                                                        class="share btn btn-fab btn-round btn-sm sys-btn-raise"
+                                                        title="Copy this link" data-toggle="tooltip" data-placement="bottom"
+                                                        style="background: #00a78e"><i class="material-icons">share</i>
+                                                </button>
+                                                <button onclick="send_mail(' + news_id + ')"
+                                                        class="btn btn-fab btn-round btn-rose btn-sm sys-btn-raise"
+                                                        title="Recieve as mail" data-toggle="tooltip"
+                                                        data-placement="bottom"><i class="material-icons">email</i></button>
+                                                {% if news_feed.file_name %}
+                                                    <a href="{{ render_static(news_feed.file_name) }}" download="true"
+                                                       class="btn btn-fab btn-round btn-sm sys-btn-raise"
+                                                       title="Download PDF" data-toggle="tooltip" data-placement="bottom"
+                                                       style="background: #6a737b">
+                                                        <i class="material-icons">get_app</i>
+                                                    </a>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            {% else %}
+                                <div class="news-div col-md-12 mt-3 mb-3 events">
+                                    <div class="row">
+                                        <div class="col-md-5" style=" padding: 0px 0px;">
+                                            <img class="news-img" src="{{ render_static(news_feed.news_image) }}">
+                                        </div>
+                                        <div class="col-md-7" style="padding: 0px 0px">
+                                            <!-- news title -->
+                                            <h5 style="">
+                                                {{ news_feed.title }}
+                                            </h5>
+                                            <div class="col-md-12 mt-2" style="">
+                                                <!-- news body -->
+                                                <p class="pb-5">
+                                                    {{ news_feed.description }}
+                                                </p></div>
+                                            <div class="col-md-12 mt-3 mb-3"
+                                                 style="position: absolute; bottom: 0px; width: 100%; ">
+                                                <!-- provide a news url -->
+                                                {% if news_feed.news_link %}
+                                                    <a href="{{ news_feed.news_link }}"
+                                                       class="btn btn-fab btn-round btn-sm sys-btn-raise" title="Visit page"
+                                                       data-toggle="tooltip" data-placement="bottom"
+                                                       style="background: #037ef3">
+                                                        <i class="material-icons">open_in_new</i>
+                                                    </a>
+                                                {% else %}
+                                                    <a href="/readmore/{{ news_feed.id }}/ "
+                                                       class="btn btn-fab btn-round btn-sm sys-btn-raise" title="Visit page"
+                                                       data-toggle="tooltip" data-placement="bottom"
+                                                       style="background: #037ef3">
+                                                        <i class="material-icons">open_in_new</i>
+                                                    </a>
+                                                {% endif %}
+                                                </button>
+                                                <button onclick="share(' + news_id + ')"
+                                                        class="share btn btn-fab btn-round btn-sm sys-btn-raise"
+                                                        title="Copy this link" data-toggle="tooltip" data-placement="bottom"
+                                                        style="background: #00a78e"><i class="material-icons">share</i>
+                                                </button>
+                                                <button onclick="send_mail(' + news_id + ')"
+                                                        class="btn btn-fab btn-round btn-rose btn-sm sys-btn-raise"
+                                                        title="Recieve as mail" data-toggle="tooltip"
+                                                        data-placement="bottom"><i class="material-icons">email</i></button>
+                                                {% if news_feed.file_name %}
+                                                    <a href="{{ render_static(news_feed.file_name) }}" download="true"
+                                                       class="btn btn-fab btn-round btn-sm sys-btn-raise"
+                                                       title="Download PDF" data-toggle="tooltip" data-placement="bottom"
+                                                       style="background: #6a737b">
+                                                        <i class="material-icons">get_app</i>
+                                                    </a>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    {% else %}
+                        <div class="danger-alert-vid mt-5">
+                            <!-- place here NIC Youtube channel URL -->
+                            <a href="#" class="text-danger" title="NIC Youtube Channel">No New News or Events.</a>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="col-md-4 pr-auto mt-5">
+                    <div class=" manual-flip subscribe_div">
+                        <div class="card card-rotat">
+                            <div class=" front-background"
+                                 style="background-image: url('{{ render_static("assets/img/kit/card-blog5.jpg") }}'); border-radius: 6px;">
+                                <div class="card-body">
+                                    <h3 class=""
+                                        style="color: white; font-family:'Samsung Sharp Sans Regular Regular';font-weight:normal;">
+                                        Subscribe Newsletter</h3>
+
+                                    <p class="text-white">
+                                        Please provide us your email and be the first to receive our news and
+                                        events.
+                                    </p>
+                                    <div class="form-group form-file-upload">
+                                        <div class="input-group" style="padding-left: 15px;">
+                                            <input type="email" class="subscribe_mail form-control"
+                                                   placeholder="Enter Your Email...."
+                                                   style="width: 90%; position: absolute; background: white; border-radius: 30px;padding-left: 10px;">
+
+                                            <button id="subscribe" type="button"
+                                                    class="btn btn-fab btn-round btn-subsc">
+                                                <i class="material-icons"
+                                                   style="margin-top: 3px; margin-left: 3px;">arrow_forward_ios</i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer ">
+    <div class="container">
+        <nav class="pull-left">
+            <ul>
+                <li>
+                    <a href="/" class=" sys-color-text">
+                        Home
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="copyright pull-right font-weight-normal sys-color-text">
+            &copy;
+            <script>
+                document.write(new Date().getFullYear())
+            </script>
+            &nbsp National Insurerance Corporation (T) Limited.
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
+{% include "common/script_links.html.twig" %}
+
+<script type="text/javascript">
+
+    // on click subscribe button send email to database
+
+    $('#subscribe').click(function () {
+        var mail = $('.subscribe_mail').val();
+        if (isEmail(mail)) {
+            var link = $(this).attr("action");
+            var method = $(this).attr("method");
+            $.ajax({
+                url: "/news_and_events/",
+                method: "POST",
+                data:{
+                    "email":mail
+                }
+            }).done(function (response) {
+                if (response['status']){
+                    $.notify({
+                        // options
+                        message: '<i class="icon-checkmark3" style="font-size:20px;"></i>&nbsp &nbsp &nbsp You have successful subscribed to our news mail !'
+                    }, {
+                        // settings
+                        type: 'success',
+                        mouse_over: 'pause'
+                    });
+                    setInterval(function () {
+                        $('.subscribe_mail').val("");
+                    },1000);
+                }else{
+                    $.notify({
+                        // options
+                        message: '<i class=" icon-cross2" style="font-size:20px;"></i>&nbsp &nbsp &nbsp Failed to subscribe !'
+                    }, {
+                        // settings
+                        type: 'danger',
+                        mouse_over: 'pause'
+                    });
+                }
+            });
+        } else {
+            $.notify({
+                // options
+                message: '<i class=" icon-cross2" style="font-size:20px;"></i>&nbsp &nbsp &nbsp Please provide a valid email !'
+            }, {
+                // settings
+                type: 'danger',
+                mouse_over: 'pause'
+            });
+        }
+
+    });
+
+    // start function open_pager
+    function open_pager(data_url, id) {
+
+        if (data_url == null && id != null) {
+            window.location.href = "readmore.html?news=" + id;
+        } else if (data_url != null && id == null) {
+            window.location.href = data_url;
+        }
+    }
+
+    //end function open_pager
+
+
+    // start of function share
+    function share(news_id) {
+
+        var ul, uu, temp_holder;
+
+        ul = window.location.href;
+        if (ul.slice(-1) == '#') {
+            uu = ul.slice(0, -10);
+        } else {
+            uu = ul.slice(0, -9);
+        }
+        uu = uu + "readmore.html?news=" + news_id;
+
+        var temp_holder = document.createElement('input'),
+
+            text = uu;
+
+        document.body.appendChild(temp_holder);
+        temp_holder.value = text;
+        temp_holder.select();
+        document.execCommand('copy');
+        document.body.removeChild(temp_holder);
+
+
+        $.notify({
+            // options
+            message: '<i class="icon-gallery" style="font-size:20px;"></i>&nbsp &nbsp &nbsp Link has been copied!'
+        }, {
+            // settings
+            type: 'success',
+            mouse_over: 'pause'
+        });
+
+    }
+
+    // end of function share
+
+    // start send_mail function
+
+    function send_mail(news_id) {
+        $.confirm({
+            type: 'green',
+            animation: 'zoom',
+            closeAnimation: 'scale',
+            title: '<h5>Enter Your Email address!</h5>',
+            content: `
+                <form action="/news_and_events/" method="POST" class="email_form">
+                <input type="email" required name="news_email" class="form-control news_email"/>
+                 <span class="text-danger email_error"></span>
+                </form>
+            `,
+            onContentReady:function(){
+                var self = this;
+                $(document).on("submit",'.email_form',function (e) {
+                    e.preventDefault();
+                    var link = $(this).attr("action");
+                    var formEmil = $(".news_email").val();
+                    if (isEmail(formEmil)){
+                        $(".email_error").html("");
+                        $.ajax({
+                            url:link,
+                            method: "POST",
+                            data:{
+                                "email": formEmil,
+                                "news_id": news_id
+                            }
+                        }).done(function (response) {
+                            self.$$formSubmit.hide();
+                            self.$$formClose.hide();
+                            self.setContent("Successfully Subscribed");
+                            setInterval(function () {
+                                window.location.reload();
+                            },1000);
+                        });
+                    } else{
+                        $(".email_error").html("<li>Field required</li>");
+                    }
+                });
+            },
+            buttons: {
+                formSubmit: {
+                    text: 'Send',
+                    btnClass: 'btn-success',
+                    action: function () {
+                        $(".email_form").submit();
+                        return false;
+                    }
+                },
+                formClose: {
+                    text: 'Cancel',
+                    btnClass: 'btn-danger',
+                },
+            }
+        });
+    }
+
+    // end send_mail function
+
+    $(document).ready(function () {
+        var state = $('#news_radio input[name="news_events"]:checked').val();
+        if (state == 0) {
+
+            $('.news').css('display', 'block');
+            $('.news').addClass('animated fadeIn');
+
+            $('.events').css('display', 'block');
+            $('.events').addClass('animated fadeIn');
+
+        } else {
+            $('.news').css('display', 'none');
+            $('.events').css('display', 'none');
+        }
+        console.log(state);
+    });
+    $('#news_radio input[type="radio"]').change(function () {
+
+        var cur_state = $('#news_radio input[name="news_events"]:checked').val();
+
+        if (cur_state == 0) {
+            $('.news').css('display', 'block');
+            $('.news').addClass('animated fadeIn');
+
+            $('.events').css('display', 'block');
+            $('.events').addClass('animated fadeIn');
+
+        } else if (cur_state == 1) {
+
+            $('.news').css('display', 'block');
+            $('.news').addClass('animated fadeIn');
+            $('.events').css('display', 'none');
+
+        } else if (cur_state == 2) {
+
+            $('.events').css('display', 'block');
+            $('.events').addClass('animated fadeIn');
+            $('.news').css('display', 'none');
+        }
+    });
+</script>

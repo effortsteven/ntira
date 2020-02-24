@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <!-- fav icon and mobile theme -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ render_static('assets/img/kit/nic-fav-32.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ render_static('assets/img/kit/nic-fav-16.png')}}">
+    <meta name="theme-color" content="#057855fc">
+
+    <title>
+        NIC | News & Events
+    </title>
+
+    <!--     Fonts and icons     -->
+    {% include "common/css_links.html.twig" %}
+    </head>
+
+
+<body class="about-us ">
+
+
+<div id="wrap-loader" >
+    <div id="loader" class="text-center">
+        <div class="loader-div"></div>
+        <h3 style="color: teal; font-size: 20px;font-family:'Samsung Sharp Sans Regular Regular';">Loading....</h3>
+    </div>
+</div>
+{% block navbar %}
+    {% include "common/navbar.html.twig" %}
+{% endblock %}
+<div class="page-header header-filter header-small" data-parallax="true"
+     style="background-image: url({{ render_static('assets/img/kit/bg21.jpg') }})">
+</div>
+
+<div class="main main-raised mx-auto" style="width: 70%;margin-top: -300px;border-radius: 10px;">
+    <div class="container">
+
+        <div class=" text-center pb-3 pt-3">
+            <div class="text-right">
+
+                <label style=""></label>
+
+            </div>
+
+            <div class="row">
+                {% if news %}
+                    {% for one_news in news %}
+                        <div class="col-md-5" style=" padding: 0px 0px;">
+                            {% if one_news.news_image %}
+                                <img class="news-img" src="{{ render_static(one_news.news_image) }}">
+                            {% else %}
+                                <img class="news-img" src="{{ render_static('assets/img/kit/news_events/plane.png') }}">
+                            {% endif %}
+                        </div>
+                        <div class="col-md-7" style="padding: 0px 0px">
+
+                            <!-- news title -->
+                            <h5 style="">{{ one_news.title }}</h5>
+
+                            <div class="col-md-12 mt-2" style="">
+
+                                <!-- news body -->
+                                <p class="pb-5">
+                                   {{ one_news.description }}
+                                </p>
+                            </div>
+                            <div class="col-md-12 mt-3 mb-3 text-right" style="position: absolute; bottom: 0px; width: 100%; ">
+
+                                <button onclick="share(1)" class="share btn btn-fab btn-round btn-sm sys-btn-raise"
+                                        title="Copy this link" data-toggle="tooltip" data-placement="bottom"
+                                        style="background: #00a78e">
+                                    <i class="material-icons">share</i>
+                                </button>
+                                <button onclick="send_mail({{ one_news.id }})" class="btn btn-fab btn-round btn-rose btn-sm sys-btn-raise"
+                                        title="Recieve as mail" data-toggle="tooltip" data-placement="bottom">
+                                    <i class="material-icons">email</i>
+                                </button>
+                                {% if one_news.file_name %}
+                                    <a class="btn btn-fab btn-round btn-sm sys-btn-raise" href="{{ one_news.file_name }}" download="true" title="Download PDF"
+                                       data-toggle="tooltip" data-placement="bottom" style="background: #6a737b">
+                                        <i class="material-icons">get_app</i>
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+
+    </div>
+</div>
+<footer class="footer ">
+    <div class="container">
+        <nav class="pull-left">
+            <ul>
+                <li>
+                    <a href="/" class=" sys-color-text">
+                        Home
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="copyright pull-right font-weight-normal sys-color-text">
+            &copy;
+            <script>
+                document.write(new Date().getFullYear())
+            </script>
+            &nbsp National Insurerance Corporation (T) Limited.
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
+{% include "common/script_links.html.twig" %}
+
+<script type="text/javascript">
+
+    // start function open_pager
+    function open_pager(data_url, id) {
+
+        if (data_url == null && id != null) {
+            window.location.href = "readmore.html?news=" + id;
+        } else if (data_url != null && id == null) {
+            window.location.href = data_url;
+        }
+    }
+
+    //end function open_pager
+
+
+    // start of function share
+    function share() {
+
+        var ul, temp_holder;
+
+        ul = window.location.href;
+
+        var temp_holder = document.createElement('input'),
+
+            text = ul;
+
+        document.body.appendChild(temp_holder);
+        temp_holder.value = text;
+        temp_holder.select();
+        document.execCommand('copy');
+        document.body.removeChild(temp_holder);
+
+
+        $.notify({
+            // options
+            message: '<i class="icon-gallery" style="font-size:20px;"></i>&nbsp &nbsp &nbsp Link has been copied!'
+        }, {
+            // settings
+            type: 'success',
+            mouse_over: 'pause'
+        });
+
+    }
+
+    // end of function share
+
+    // start send_mail function
+
+    function send_mail(news_id) {
+        $.confirm({
+            type: 'green',
+            animation: 'zoom',
+            closeAnimation: 'scale',
+            title: '<h5>Enter Your Email address!</h5>',
+            content: `
+                <form action="/news_and_events/" method="POST" class="email_form">
+                <input type="email" required name="news_email" class="form-control news_email"/>
+                 <span class="text-danger email_error"></span>
+                </form>
+            `,
+            onContentReady:function(){
+                var self = this;
+                $(document).on("submit",'.email_form',function (e) {
+                    e.preventDefault();
+                    var link = $(this).attr("action");
+                    var formEmil = $(".news_email").val();
+                    if (isEmail(formEmil)){
+                        $(".email_error").html("");
+                        $.ajax({
+                            url:link,
+                            method: "POST",
+                            data:{
+                                "email": formEmil,
+                                "news_id": news_id
+                            }
+                        }).done(function (response) {
+                            self.$$formSubmit.hide();
+                            self.$$formClose.hide();
+                            self.setContent("Successfully Subscribed");
+                            setInterval(function () {
+                                window.location.reload();
+                            },1000);
+                        });
+                    } else{
+                        $(".email_error").html("<li>Field required</li>");
+                    }
+                });
+            },
+            buttons: {
+                formSubmit: {
+                    text: 'Send',
+                    btnClass: 'btn-success',
+                    action: function () {
+                        $(".email_form").submit();
+                        return false;
+                    }
+                },
+                formClose: {
+                    text: 'Cancel',
+                    btnClass: 'btn-danger',
+                },
+            }
+        });
+    }
+
+    // end send_mail function
+</script>

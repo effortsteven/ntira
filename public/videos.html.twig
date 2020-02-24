@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <!-- fav icon and mobile theme -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ render_static('assets/img/kit/nic-fav-32.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ render_static('assets/img/kit/nic-fav-16.png')}}">
+    <meta name="theme-color" content="#057855fc">
+
+    <title>
+       Video Gallery | NIC
+    </title>
+
+    <!--     Fonts and icons     -->
+    {% include "common/css_links.html.twig" %}
+</head>
+
+
+<body class="about-us ">
+<div id="wrap-loader" >
+    <div id="loader" class="text-center">
+        <div class="loader-div"></div>
+        <h3 style="color: teal; font-size: 20px;font-family:'Samsung Sharp Sans Regular Regular';">Loading....</h3>
+    </div>
+</div>
+
+{% block navbar %}
+    {% include "common/navbar.html.twig" %}
+{% endblock %}
+<div class="page-header header-filter header-small" data-parallax="true" style="background-image: url({{ render_static('assets/img/kit/bg21.jpg') }});">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 ml-auto mr-auto text-center t_c_top_title">
+                <h1 class="title" style="font-family:'Samsung Sharp Sans Regular Regular'; display: inline;">Video Gallery</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main main-raised tender-raised-cont">
+    <div class="container col-lg-12">
+
+        <div class=" text-center pb-3 pt-3">
+            <div class="text-right">
+            
+                <span class="channel_sub">
+                {% if channels %}
+                    <label style="color: rgba(60, 72, 88,1);font-size: 16px">Visit Our Official Youtube Channel <a href="{{ channels.0.name }}" class="btn btn-danger btn-round sys-btn-raise btn-sm" style=""><i class="icon-youtube"></i>
+                            &nbsp&nbsp Youtube
+                        </a></label>
+                {% endif %}
+                </span>
+                <button onclick="share_channel()" class="share btn btn-fab btn-round btn-sm sys-btn-raise" title="Share Channel Link" data-toggle="tooltip" data-placement="bottom" style="background: #00a78e">
+                        <i class="material-icons">share</i>
+                    </button>
+            </div>
+            <div  class="row mb-5">
+
+                <div class="col-md-7 col-sm-12">
+                    <div class="text-left">
+                        <label style="color: rgba(60, 72, 88,1);font-size: 16px"><i class="icon-history"></i> Our Recent Videos</label>
+                    </div>
+                    <div class="row">
+                        {% if video_list %}
+                            {% for video in video_list %}
+                                <div class="col-md-6 mt-3 vid-div">
+                                    <div class="iframe-container b-r-6">
+                                        <iframe src="" frameborder="0"  allow="encrypted-media" allowfullscreen></iframe>
+
+                                        <div class="vid-hover-div">
+                                        </div>
+
+                                        <!-- youtube url -->
+                                        <a href="{{ video_path }}" class="btn btn-danger btn-round sys-btn-raise btn-sm btn-play" style=""><i class="icon-play4"></i>&nbsp &nbsp Play
+                                        </a>
+                                        <div>
+                                            <!--  youtube url -->
+                                            <a href=""><label class="text-info">
+                                                    {{ title }}
+                                                </label></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            <div class="danger-alert-vid ml-3">
+                                <!-- place here NIC Youtube channel URL -->
+                                <a href="#" class="text-danger" title="NIC Youtube Channel">No new videos!, Visit our official Youtube channel.</a>
+                            </div>
+                        {% endif %}
+                    </div>
+
+
+
+                </div>
+                <div class="col-md-5 pr-auto mt-5 mob-no-disp">
+                    <!-- ?autoplay=1 -->
+                    {% if channels %}
+                        <iframe src="{{ channels.0.name }}" style="height: 300px;box-shadow: -8px 10px 10px 0px rgba(0,0,0,.25), 2px 0px 10px 1px rgba(0,0,0,.2);">
+                        </iframe>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer ">
+    <div class="container">
+        <nav class="pull-left">
+            <ul>
+                <li>
+                    <a href="../index.html">
+                        Home
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="copyright pull-right font-weight-normal" >
+            &copy;
+            <script>
+                document.write(new Date().getFullYear())
+            </script>
+            &nbsp National Insurerance Corporation (T) Limited.
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
+{% include "common/script_links.html.twig" %}
+<script type="text/javascript">
+  function share_channel(){
+        var get_url = $('.channel_sub a').attr('href');
+
+        var temp_holder = document.createElement('input'),
+        text = get_url;
+
+        document.body.appendChild(temp_holder);
+        temp_holder.value = text;
+        temp_holder.select();
+        document.execCommand('copy');
+        document.body.removeChild(temp_holder);
+
+
+        $.notify({
+            // options
+            message: '<i class="icon-gallery" style="font-size:20px;"></i>&nbsp &nbsp &nbsp Link has been copied!'
+        }, {
+                // settings
+                type: 'success',
+                mouse_over: 'pause'
+            });
+    }
+</script>

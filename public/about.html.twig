@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <!-- fav icon and mobile theme -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ render_static('assets/img/kit/nic-fav-32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ render_static('assets/img/kit/nic-fav-16.png') }}">
+    <meta name="theme-color" content="#1f5a2c">
+
+
+    <title>
+        NIC | About Us
+    </title>
+
+    {% include "common/css_links.html.twig" %}
+
+
+</head>
+
+
+<body class="about-us ">
+
+<div id="wrap-loader" >
+    <div id="loader" class="text-center">
+        <div class="loader-div"></div>
+        <h3 style="color: teal; font-size: 20px;font-family:'Samsung Sharp Sans Regular Regular';">Loading....</h3>
+    </div>
+</div>
+
+{% block navbar %}
+    {% include "common/navbar.html.twig" %}
+{% endblock %}
+
+<div class="page-header header-filter header-small" data-parallax="true" style="background-image: url('{{ render_static("assets/img/kit/bg21.jpg") }}');">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 ml-auto mr-auto text-center">
+                <h1 class="title" style="font-family:'Samsung Sharp Sans Regular Regular';">About Us</h1>
+                <label class="about-top-title-in">
+                    <a href="#background"> Background </a>
+                    <span class="status-mark border-white"></span>
+                    <a href="#visionMission"> Vision & Mission </a>
+                    <span class="status-mark border-white"></span>
+                    <a href="#coreValues"> Core Values </a>
+                    <span class="status-mark border-white"></span>
+                    <a href="#company_structure"> Company Structure </a>
+                    <span class="status-mark border-white"></span>
+                    <a href="#boardDirec"> Board of Directors </a>
+                    <span class="status-mark border-white"></span>
+                    <a href="#seniorManag"> Senior Management Team </a>
+                    <span class="status-mark border-white"></span>
+                    <a href="#regionalTeam"> Regional Team </a>
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main main-raised" style="margin-top: -120px;">
+    <div class="container">
+
+
+        <!-- --------------------------------COMPANY BACKGROUND-------------------------- -->
+        <div id="background" class="about-description text-center">
+            <div  class="row" style=" margin-top: -50px;">
+                <div class="col-md-12 ml-auto mr-auto" >
+                    <h3 class="title text-left" style="border-bottom: 1px solid rgba(16, 94, 58, 0.3); padding-bottom: 5px;font-family:'SamsungSharpSans-Bold'">Background</h3>
+                    <h5 class="">
+                        <span style="font-size: 20px">T</span>he National Insurance Corporation of Tanzania (NIC) (T) was incorporated on 16th October 1963 with Government ownership of fifty one per cent (51%) , while forty nine (49%) was shared by Munich-Re, Swiss-Re and Colin Hood Insursnce Brokers Limited. The Coporation was authorized to transact Life and General Insurance business. After the Arusha Declaration in February, 1967, NIC was<span id="dots">.....</span>
+                        <span id="more">
+                             nationalized and became 100% owned by the government and was the only insurance company in the country for about 30 years up to 1996 when insurance industry was liberalized by the Insurance Act No. 18 of 1996 opening entry of private investors in the insurance sector. The legislation was later repealed by the Insurance Act No. 10 of 2009 which brought in regulation of insurance sector through the Tanzania Insurance Regulatory Authority.
+                         </span>
+                        <span onclick="readMore()" id="myBtn" style="cursor: pointer; color:rgb(70, 157, 245);">...Read more</span>
+                    </h5>
+                </div>
+            </div>
+        </div>
+        <!-- --------------------------------VISION AND MISSION-------------------------- -->
+        <div id="visionMission" class="about-description">
+            <div class="row" style=" margin-top: -50px;">
+                <div class="col-md-12 ml-auto mr-auto" >
+                    <!-- <h3 class="title text-left">Vision  & Mission</h3> -->
+                    <div class="row">
+                        <div class="col-md-5 ml-auto mr-auto text-center">
+                            <h3 class="title text-center"  style="border-bottom: 1px solid rgba(16, 94, 58, 0.3); padding-bottom: 5px; font-family:'SamsungSharpSans-Bold'">Vision</h3>
+                            <h5 class="">
+                                To be a distinguished leading provider of quality, profitable, and sustainable insurance services in Tanzania.
+                            </h5>
+                        </div>
+                        <div class="col-md-2">
+                            <h3 class="title text-center">&amp</h3>
+
+                        </div>
+                        <div class="col-md-5 ml-auto mr-auto text-center">
+                            <h3 class="title text-center"  style="border-bottom: 1px solid rgba(16, 94, 58, 0.3); padding-bottom: 5px;font-family:'SamsungSharpSans-Bold'">Mission</h3>
+                            <h5 class="">
+                                To provide demand driven insurance services, through innovative marketing, efficient ICT systems and management of resources.
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- --------------------------------CORE VALUES---------------------------  -->
+        <div id="coreValues" class="about-description">
+            <div class="row">
+                <div class="col-md-12 ml-auto mr-auto" >
+                    <h3 class="title text-left" style="border-bottom: 1px solid rgba(16, 94, 58, 0.3); padding-bottom: 5px;font-family:'SamsungSharpSans-Bold'">
+                        Core Values
+                    </h3>
+                    <div class="row" style="margin-top: 30px;">
+                        <div class="col-md-3 text-left">
+                            <label class="label-title">
+                                <p>
+                                    <i class="icon-radio-unchecked" style="font-size:8px;color: teal"></i>
+                                    Good Governance
+                                </p>
+                            </label>
+                        </div>
+                        <div class="col-md-3 text-left">
+                            <label class="label-title">
+                                <p>
+                                    <i class="icon-radio-unchecked" style="font-size:8px;color: teal"></i>
+                                    Customber First</p>
+                            </label>
+                        </div>
+                        <div class="col-md-3 text-left">
+                            <label class="label-title">
+                                <p>
+                                    <i class="icon-radio-unchecked" style="font-size:8px;color: teal"></i>
+                                    High Quality Services</p>
+                            </label>
+                        </div>
+                        <div class="col-md-3 text-left">
+                            <label class="label-title">
+                                <p>
+                                    <i class="icon-radio-unchecked" style="font-size:8px;color: teal"></i>
+                                    Corporate Integrity</p>
+                            </label>
+                        </div>
+                        <div class="col-md-3 text-left">
+                            <label class="label-title">
+                                <p>
+                                    <i class="icon-radio-unchecked" style="font-size:8px;color: teal"></i>
+                                    Reliability</p>
+                            </label>
+                        </div>
+                        <div class="col-md-3 text-left">
+                            <label class="label-title">
+                                <p>
+                                    <i class="icon-radio-unchecked" style="font-size:8px;color: teal"></i>
+                                    Professionalism</p>
+                            </label>
+                        </div>
+                        <div class="col-md-3 text-left">
+                            <label class="label-title">
+                                <p>
+                                    <i class="icon-radio-unchecked" style="font-size:8px;color: teal"></i>
+                                    Social Responsibilty</p>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- --------------------------------COMPANY STRUCTURE-------------------------- -->
+        <div id="company_structure" class="about-description">
+            <div  class="row">
+                <div class="col-md-12 ml-auto mr-auto" >
+                    <h3 class="title text-left" style="border-bottom: 1px solid rgba(16, 94, 58, 0.3); padding-bottom: 5px; font-family:'SamsungSharpSans-Bold'">Company Structure</h3>
+                    <h5 class="text-center bg-sys-color struc-tilte-in"> National Insurance Corparation directorates</h5>
+                    <div class="row" style="margin-top: 30px">
+                        <div class="col-md-3 text-center">
+                            <label class="label-title">Directorate of Finance and Administration</label>
+                        </div>
+                        <div class="col-md-2 text-center">
+                            <label class="label-title">
+                                Directorate of Non Life Insurance
+                            </label>
+                        </div>
+                        <div class="col-md-2 text-center">
+                            <label  class="label-title">
+                                Directorate of Life Assurance
+                            </label>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <label class="label-title">
+                                Directorate of Marketing and Customer Services
+                            </label>
+                        </div>
+                        <div class="col-md-2 text-center">
+                            <label  class="label-title">
+                                Directorate of Internal Audit
+                            </label>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 30px;">
+                        <h5 class="text-center bg-sys-color struc-tilte-in">Independent departments which are headed by Chief Managers</h5>
+                        <div class="row" style="margin-top: 30px">
+                            <div class="col-md-4 col-sm-3 text-center">
+                                <label  class="label-title">
+                                    Legal Department
+                                </label>
+                            </div>
+                            <div class="col-md-4 col-sm-3 text-center">
+                                <label  class="label-title">
+                                    Actuarial Department
+                                </label>
+                            </div>
+                            <div class="col-md-4 col-sm-3 text-center">
+                                <label  class="label-title">
+                                    ICT Department
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 30px;">
+                        <h5 class="text-center bg-sys-color struc-tilte-in">Two independent units which reports directly to the Managing Director</h5>
+                        <div class="row" style="margin-top: 30px">
+                            <div class="col-md-6 text-center">
+                                <label  class="label-title">
+                                    Procurement Unit
+                                </label>
+                            </div>
+                            <div class="col-md-6 text-center">
+                                <label  class="label-title">
+                                    Public Relation Unit
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- --------------------------------BOARD OF DIRECTORS-------------------------- -->
+        <div id="boardDirec" class="cd-section" style="margin-top: 50px">
+            <div class="cards" id="morphingCards">
+                <div class="container">
+                    <div class="title">
+                        <h3 class="title text-left" style="border-bottom: 1px solid rgba(16, 94, 58, 0.3); padding-bottom: 5px; font-family:'SamsungSharpSans-Bold'">Board of Directors</h3>
+
+                    </div>
+                    <div class="row" style="justify-content: center;">
+
+                        <div class="col-md-3">
+                            <div class="card card-profile card-plain" style="background: white; box-shadow: 1px 2px 15px 3px rgba(5, 120, 85,.25);">
+                                <div class="card-avatar" style="box-shadow: -2px 4px 15px 3px rgba(5, 120, 85,.2);">
+                                    <a >
+                                        <img class="img" src="{{ render_static('assets/img/kit/staffs/laston.jpg') }}">
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title" style="font-family: sans-serif;font-weight: 100;color: rgba(5, 120, 85);">Mr. Laston Thomas Msongole</h4>
+                                    <h6 class="category text-muted" style="margin-top: -12px">- Chairman -</h6>
+                                    <label class="card-description">
+                                        PGD (Dev. Planning Techniques) ISS of the Erasmus University, The Hague 1990.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="card card-profile card-plain" style="background: white; box-shadow: 1px 2px 15px 3px rgba(5, 120, 85,.25);">
+                                <div class="card-avatar" style="box-shadow: -2px 4px 15px 3px rgba(5, 120, 85,.2);">
+                                    <a >
+                                        <img class="img" src="{{ render_static('assets/img/kit/staffs/adam.jpg') }}">
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title" style="font-family: sans-serif;font-weight: 100;color: rgba(5, 120, 85);">Mr. Adam Basil Mbanga</h4>
+                                    <h6 class="category text-muted" style="margin-top: -12px">- Member -</h6>
+                                    <label class="card-description">
+                                        Masters in Business Studies (Human Resource Management ) 1989 Massey University, New Zealand.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="card card-profile card-plain" style="background: white; box-shadow: 1px 2px 15px 3px rgba(5, 120, 85,.25);">
+                                <div class="card-avatar" style="box-shadow: -2px 4px 15px 3px rgba(5, 120, 85,.2);">
+                                    <a >
+                                        <img class="img" src="{{ render_static('assets/img/kit/staffs/judica.jpg') }}">
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title" style="font-family: sans-serif;font-weight: 100;color: rgba(5, 120, 85);">Dr. Judika L. Kingori</h4>
+                                    <h6 class="category text-muted" style="margin-top: -12px">- Member -</h6>
+                                    <label class="card-description">
+                                        PhD of Philosophy 9Business Administration), Southern Ilinois University at Carbondale, USA.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="card card-profile card-plain" style="background: white; box-shadow: 1px 2px 15px 3px rgba(5, 120, 85,.25);">
+                                <div class="card-avatar" style="box-shadow: -2px 4px 15px 3px rgba(5, 120, 85,.2);">
+                                    <a >
+                                        <img class="img" src="{{ render_static('assets/img/kit/user_prof.png') }}">
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title" style="font-family: sans-serif;font-weight: 100;color: rgba(5, 120, 85);">Dr. Huba M. Nguluma</h4>
+                                    <h6 class="category text-muted" style="margin-top: -12px">- Member -</h6>
+                                    <label class="card-description">
+                                        PhD in Built Environment Analysis, Royal Institute of Technology, Stockholm Sweden, 2003.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="card card-profile card-plain" style="background: white; box-shadow: 1px 2px 15px 3px rgba(5, 120, 85,.25);">
+                                <div class="card-avatar" style="box-shadow: -2px 4px 15px 3px rgba(5, 120, 85,.2);">
+                                    <a >
+                                        <img class="img" src="{{ render_static('assets/img/kit/staffs/michael.jpg') }}">
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title" style="font-family: sans-serif;font-weight: 100;color: rgba(5, 120, 85);">Mr Michael Macharey</h4>
+                                    <h6 class="category text-muted" style="margin-top: -12px">- Member -</h6>
+                                    <label class="card-description">
+                                        <!-- PhD in Built Environment Analysis, Royal Institute of Technology, Stockholm Sweden, 2003. -->
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- --------------------------------SENIOR MANAGEMENT TEAM-------------------------- -->
+        <div id="seniorManag" class="cd-section" style="margin-top: 50px">
+            <div class="cards" id="morphingCards">
+                <div class="container">
+                    <div class="title">
+                        <h3 class="title text-left" style="border-bottom: 1px solid rgba(16, 94, 58, 0.3); padding-bottom: 5px; font-family:'SamsungSharpSans-Bold'">Senior Management Team</h3>
+
+                    </div>
+                    <div class="row" style="justify-content: center;">
+
+                        <div class="col-md-3">
+                            <div class="card card-profile card-plain" style="background: white; box-shadow: 1px 2px 15px 3px rgba(5, 120, 85,.25);">
+                                <div class="card-avatar" style="box-shadow: -2px 4px 15px 3px rgba(5, 120, 85,.2);">
+                                    <a >
+                                        <img class="img" src="{{ render_static('assets/img/kit/user_prof.png') }}" style="height: 100px; width: 100px">
+                                    </a>
+                                </div>
+                                <div class="card-body" >
+                                    <h4 class="card-title" style="font-family: sans-serif;font-weight: 100;color: rgba(5, 120, 85); margin-top: -20px;">Mr Sam Kamanga</h4>
+                                    <h6 class="category text-muted" style="margin-top: -12px">- Managing Director -</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="card card-profile card-plain" style="background: white; box-shadow: 1px 2px 15px 3px rgba(5, 120, 85,.25);">
+                                <div class="card-avatar" style="box-shadow: -2px 4px 15px 3px rgba(5, 120, 85,.2);">
+                                    <a >
+                                        <img class="img" src="{{ render_static('assets/img/kit/user_prof.png') }}" style="height: 100px; width: 100px">
+                                    </a>
+                                </div>
+                                <div class="card-body" >
+                                    <h4 class="card-title" style="font-family: sans-serif;font-weight: 100;color: rgba(5, 120, 85); margin-top: -20px;">Mr Michael Mowo</h4>
+                                    <h6 class="category text-muted" style="margin-top: -12px">- Ag. Director Life Insurance and Pension -</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="card card-profile card-plain" style="background: white; box-shadow: 1px 2px 15px 3px rgba(5, 120, 85,.25);">
+                                <div class="card-avatar" style="box-shadow: -2px 4px 15px 3px rgba(5, 120, 85,.2);">
+                                    <a >
+                                        <img class="img" src="{{ render_static('assets/img/kit/user_prof.png') }}" style="height: 100px; width: 100px">
+                                    </a>
+                                </div>
+                                <div class="card-body" >
+                                    <h4 class="card-title" style="font-family: sans-serif;font-weight: 100;color: rgba(5, 120, 85); margin-top: -20px;">Mr Romanus Hokororo</h4>
+                                    <h6 class="category text-muted" style="margin-top: -12px">- Ag. Director of Non Life -</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="card card-profile card-plain" style="background: white; box-shadow: 1px 2px 15px 3px rgba(5, 120, 85,.25);">
+                                <div class="card-avatar" style="box-shadow: -2px 4px 15px 3px rgba(5, 120, 85,.2);">
+                                    <a >
+                                        <img class="img" src="{{ render_static('assets/img/kit/user_prof.png') }}" style="height: 100px; width: 100px">
+                                    </a>
+                                </div>
+                                <div class="card-body" >
+                                    <h4 class="card-title" style="font-family: sans-serif;font-weight: 100;color: rgba(5, 120, 85); margin-top: -20px;">Ms Tunu Shaban</h4>
+                                    <h6 class="category text-muted" style="margin-top: -12px">- Ag Director of Finance and Administration -</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="card card-profile card-plain" style="background: white; box-shadow: 1px 2px 15px 3px rgba(5, 120, 85,.25);">
+                                <div class="card-avatar" style="box-shadow: -2px 4px 15px 3px rgba(5, 120, 85,.2);">
+                                    <a >
+                                        <img class="img" src="{{ render_static('assets/img/kit/user_prof.png') }}" style="height: 100px; width: 100px">
+                                    </a>
+                                </div>
+                                <div class="card-body" >
+                                    <h4 class="card-title" style="font-family: sans-serif;font-weight: 100;color: rgba(5, 120, 85); margin-top: -20px;">Ms Nyaoga Lupeja</h4>
+                                    <h6 class="category text-muted" style="margin-top: -12px">- Ag. Director of Internal Audit -</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="card card-profile card-plain" style="background: white; box-shadow: 1px 2px 15px 3px rgba(5, 120, 85,.25);">
+                                <div class="card-avatar" style="box-shadow: -2px 4px 15px 3px rgba(5, 120, 85,.2);">
+                                    <a >
+                                        <img class="img" src="{{ render_static('assets/img/kit/user_prof.png') }}" style="height: 100px; width: 100px">
+                                    </a>
+                                </div>
+                                <div class="card-body" >
+                                    <h4 class="card-title" style="font-family: sans-serif;font-weight: 100;color: rgba(5, 120, 85); margin-top: -20px;">Mr Elisante Maleko</h4>
+                                    <h6 class="category text-muted" style="margin-top: -12px">- Ag. Director Marketing and Customer Services -</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="card card-profile card-plain" style="background: white; box-shadow: 1px 2px 15px 3px rgba(5, 120, 85,.25);">
+                                <div class="card-avatar" style="box-shadow: -2px 4px 15px 3px rgba(5, 120, 85,.2);">
+                                    <a >
+                                        <img class="img" src="{{ render_static('assets/img/kit/user_prof.png') }}" style="height: 100px; width: 100px">
+                                    </a>
+                                </div>
+                                <div class="card-body" >
+                                    <h4 class="card-title" style="font-family: sans-serif;font-weight: 100;color: rgba(5, 120, 85); margin-top: -20px;">Ms Verdiana Macha</h4>
+                                    <h6 class="category text-muted" style="margin-top: -12px">- Chief Legal Counsel -</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="card card-profile card-plain" style="background: white; box-shadow: 1px 2px 15px 3px rgba(5, 120, 85,.25);">
+                                <div class="card-avatar" style="box-shadow: -2px 4px 15px 3px rgba(5, 120, 85,.2);">
+                                    <a >
+                                        <img class="img" src="{{ render_static('assets/img/kit/user_prof.png') }}" style="height: 100px; width: 100px">
+                                    </a>
+                                </div>
+                                <div class="card-body" >
+                                    <h4 class="card-title" style="font-family: sans-serif;font-weight: 100;color: rgba(5, 120, 85); margin-top: -20px;">Ms Tabu Kingu</h4>
+                                    <h6 class="category text-muted" style="margin-top: -12px">- Ag Chief Accountant -</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="card card-profile card-plain" style="background: white; box-shadow: 1px 2px 15px 3px rgba(5, 120, 85,.25);">
+                                <div class="card-avatar" style="box-shadow: -2px 4px 15px 3px rgba(5, 120, 85,.2);">
+                                    <a >
+                                        <img class="img" src="{{ render_static('assets/img/kit/user_prof.png') }}" style="height: 100px; width: 100px">
+                                    </a>
+                                </div>
+                                <div class="card-body" >
+                                    <h4 class="card-title" style="font-family: sans-serif;font-weight: 100;color: rgba(5, 120, 85); margin-top: -20px;">Mr Michael Mwenda</h4>
+                                    <h6 class="category text-muted" style="margin-top: -12px">- Ag Chief Manager ICT -</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="card card-profile card-plain" style="background: white; box-shadow: 1px 2px 15px 3px rgba(5, 120, 85,.25);">
+                                <div class="card-avatar" style="box-shadow: -2px 4px 15px 3px rgba(5, 120, 85,.2);">
+                                    <a >
+                                        <img class="img" src="{{ render_static('assets/img/kit/user_prof.png') }}" style="height: 100px; width: 100px">
+                                    </a>
+                                </div>
+                                <div class="card-body" >
+                                    <h4 class="card-title" style="font-family: sans-serif;font-weight: 100;color: rgba(5, 120, 85); margin-top: -20px;">Mr Petro Mgaya</h4>
+                                    <h6 class="category text-muted" style="margin-top: -12px">- Ag Chief Actuarial -</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- --------------------------------REGIONAL TEAM-------------------------- -->
+        <div id="regionalTeam" class="cd-section" style="margin-top: 50px">
+            <div class="cards" id="morphingCards">
+                <div class="container">
+                    <div class="title">
+                        <h3 class="title text-left" style="border-bottom: 1px solid rgba(16, 94, 58, 0.3); padding-bottom: 5px; font-family:'SamsungSharpSans-Bold'">Regional Team</h3>
+
+                    </div>
+                    <div class="row" style="justify-content: center;">
+
+                        <div class="col-md-3 ">
+                            <div class="card card-profile card-plain" >
+                                <div class="card-avatar" style="box-shadow: -2px 4px 15px 3px rgba(5, 120, 85,.2);">
+                                    <a >
+                                        <img class="img" src="{{ render_static('assets/img/kit/user_prof.png') }}" style="height: 70px; width: 70px">
+                                    </a>
+                                </div>
+                                <div class="card-body" >
+                                    <h4 class="card-title" style="font-family: sans-serif;font-weight: 100;color: rgba(5, 120, 85); margin-top: -20px;">Mr Tibrus Massawe</h4>
+                                    <h6 class="category text-muted" style="margin-top: -12px">- Branch Manager Kisutu -<br>- Dar es salaam -</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="card card-profile card-plain">
+                                <div class="card-avatar" style="box-shadow: -2px 4px 15px 3px rgba(5, 120, 85,.2);">
+                                    <a >
+                                        <img class="img" src="{{ render_static('assets/img/kit/user_prof.png') }}" style="height: 70px; width: 70px">
+                                    </a>
+                                </div>
+                                <div class="card-body" >
+                                    <h4 class="card-title" style="font-family: sans-serif;font-weight: 100;color: rgba(5, 120, 85); margin-top: -20px;">Mrs Halima Makange</h4>
+                                    <h6 class="category text-muted" style="margin-top: -12px">- Branch Manager Dodoma -</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="card card-profile card-plain" >
+                                <div class="card-avatar" style="box-shadow: -2px 4px 15px 3px rgba(5, 120, 85,.2);">
+                                    <a >
+                                        <img class="img" src="{{ render_static('assets/img/kit/user_prof.png') }}" style="height: 70px; width: 70px">
+                                    </a>
+                                </div>
+                                <div class="card-body" >
+                                    <h4 class="card-title" style="font-family: sans-serif;font-weight: 100;color: rgba(5, 120, 85); margin-top: -20px;">Mr Ally Mohamed</h4>
+                                    <h6 class="category text-muted" style="margin-top: -12px">- Branch Manager Mbeya -</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="card card-profile card-plain">
+                                <div class="card-avatar" style="box-shadow: -2px 4px 15px 3px rgba(5, 120, 85,.2);">
+                                    <a >
+                                        <img class="img" src="{{ render_static('assets/img/kit/user_prof.png') }}" style="height: 70px; width: 70px">
+                                    </a>
+                                </div>
+                                <div class="card-body" >
+                                    <h4 class="card-title" style="font-family: sans-serif;font-weight: 100;color: rgba(5, 120, 85); margin-top: -20px;">Mr Francis Mlelwa</h4>
+                                    <h6 class="category text-muted" style="margin-top: -12px">- Branch Manager Iringa -</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="card card-profile card-plain" >
+                                <div class="card-avatar" style="box-shadow: -2px 4px 15px 3px rgba(5, 120, 85,.2);">
+                                    <a >
+                                        <img class="img" src="{{ render_static('assets/img/kit/user_prof.png') }}" style="height: 70px; width: 70px">
+                                    </a>
+                                </div>
+                                <div class="card-body" >
+                                    <h4 class="card-title" style="font-family: sans-serif;font-weight: 100;color: rgba(5, 120, 85); margin-top: -20px;">Mr Paul Mkumbo</h4>
+                                    <h6 class="category text-muted" style="margin-top: -12px">- Branch Manager Kigoma -</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="card card-profile card-plain" >
+                                <div class="card-avatar" style="box-shadow: -2px 4px 15px 3px rgba(5, 120, 85,.2);">
+                                    <a >
+                                        <img class="img" src="{{ render_static('assets/img/kit/user_prof.png') }}" style="height: 70px; width: 70px">
+                                    </a>
+                                </div>
+                                <div class="card-body" >
+                                    <h4 class="card-title" style="font-family: sans-serif;font-weight: 100;color: rgba(5, 120, 85); margin-top: -20px;">Ms Neema Mhauka</h4>
+                                    <h6 class="category text-muted" style="margin-top: -12px">- Branch Manager Songea -</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="card card-profile card-plain" >
+                                <div class="card-avatar" style="box-shadow: -2px 4px 15px 3px rgba(5, 120, 85,.2);">
+                                    <a >
+                                        <img class="img" src="{{ render_static('assets/img/kit/user_prof.png') }}" style="height: 70px; width: 70px">
+                                    </a>
+                                </div>
+                                <div class="card-body" >
+                                    <h4 class="card-title" style="font-family: sans-serif;font-weight: 100;color: rgba(5, 120, 85); margin-top: -20px;">Mr Ruta Kaijage</h4>
+                                    <h6 class="category text-muted" style="margin-top: -12px">- Branch Manager Morogoro -</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="card card-profile card-plain" >
+                                <div class="card-avatar" style="box-shadow: -2px 4px 15px 3px rgba(5, 120, 85,.2);">
+                                    <a >
+                                        <img class="img" src="{{ render_static('assets/img/kit/user_prof.png') }}" style="height: 70px; width: 70px">
+                                    </a>
+                                </div>
+                                <div class="card-body" >
+                                    <h4 class="card-title" style="font-family: sans-serif;font-weight: 100;color: rgba(5, 120, 85); margin-top: -20px;">Mr Daudi Kumenya</h4>
+                                    <h6 class="category text-muted" style="margin-top: -12px">- Branch Manager Musoma -</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="card card-profile card-plain" >
+                                <div class="card-avatar" style="box-shadow: -2px 4px 15px 3px rgba(5, 120, 85,.2);">
+                                    <a >
+                                        <img class="img" src="{{ render_static('assets/img/kit/user_prof.png') }}" style="height: 70px; width: 70px">
+                                    </a>
+                                </div>
+                                <div class="card-body" >
+                                    <h4 class="card-title" style="font-family: sans-serif;font-weight: 100;color: rgba(5, 120, 85); margin-top: -20px;">Mr Lazaro Bangilana</h4>
+                                    <h6 class="category text-muted" style="margin-top: -12px">- Branch Manager City -<br>- Dar es salaam -</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="card card-profile card-plain" >
+                                <div class="card-avatar" style="box-shadow: -2px 4px 15px 3px rgba(5, 120, 85,.2);">
+                                    <a >
+                                        <img class="img" src="{{ render_static('assets/img/kit/user_prof.png') }}" style="height: 70px; width: 70px">
+                                    </a>
+                                </div>
+                                <div class="card-body" >
+                                    <h4 class="card-title" style="font-family: sans-serif;font-weight: 100;color: rgba(5, 120, 85); margin-top: -20px;">Veronica Ochaka</h4>
+                                    <h6 class="category text-muted" style="margin-top: -12px">- Ag. Branch Manager Life House -<br>- Dar es salaam -</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="card card-profile card-plain" >
+                                <div class="card-avatar" style="box-shadow: -2px 4px 15px 3px rgba(5, 120, 85,.2);">
+                                    <a >
+                                        <img class="img" src="{{ render_static('assets/img/kit/user_prof.png') }}" style="height: 70px; width: 70px">
+                                    </a>
+                                </div>
+                                <div class="card-body" >
+                                    <h4 class="card-title" style="font-family: sans-serif;font-weight: 100;color: rgba(5, 120, 85); margin-top: -20px;">Mr Segeja Mabula</h4>
+                                    <h6 class="category text-muted" style="margin-top: -12px">- Branch Manager Ubungo -<br>- Dar es salaam -</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="card card-profile card-plain" >
+                                <div class="card-avatar" style="box-shadow: -2px 4px 15px 3px rgba(5, 120, 85,.2);">
+                                    <a >
+                                        <img class="img" src="{{ render_static('assets/img/kit/user_prof.png') }}" style="height: 70px; width: 70px">
+                                    </a>
+                                </div>
+                                <div class="card-body" >
+                                    <h4 class="card-title" style="font-family: sans-serif;font-weight: 100;color: rgba(5, 120, 85); margin-top: -20px;">Mr John Mdenye</h4>
+                                    <h6 class="category text-muted" style="margin-top: -12px">- Branch Manager Arusha -</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="card card-profile card-plain" >
+                                <div class="card-avatar" style="box-shadow: -2px 4px 15px 3px rgba(5, 120, 85,.2);">
+                                    <a >
+                                        <img class="img" src="{{ render_static('assets/img/kit/user_prof.png') }}" style="height: 70px; width: 70px">
+                                    </a>
+                                </div>
+                                <div class="card-body" >
+                                    <h4 class="card-title" style="font-family: sans-serif;font-weight: 100;color: rgba(5, 120, 85); margin-top: -20px;">Mr Julius Mazagwa</h4>
+                                    <h6 class="category text-muted" style="margin-top: -12px">- Branch Manager Mtwara -</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="card card-profile card-plain" >
+                                <div class="card-avatar" style="box-shadow: -2px 4px 15px 3px rgba(5, 120, 85,.2);">
+                                    <a >
+                                        <img class="img" src="{{ render_static('assets/img/kit/user_prof.png') }}" style="height: 70px; width: 70px">
+                                    </a>
+                                </div>
+                                <div class="card-body" >
+                                    <h4 class="card-title" style="font-family: sans-serif;font-weight: 100;color: rgba(5, 120, 85); margin-top: -20px;">Mr Mashengele Mndeme</h4>
+                                    <h6 class="category text-muted" style="margin-top: -12px">- Branch Manager Bukoba -</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="card card-profile card-plain" >
+                                <div class="card-avatar" style="box-shadow: -2px 4px 15px 3px rgba(5, 120, 85,.2);">
+                                    <a >
+                                        <img class="img" src="{{ render_static('assets/img/kit/user_prof.png') }}" style="height: 70px; width: 70px">
+                                    </a>
+                                </div>
+                                <div class="card-body" >
+                                    <h4 class="card-title" style="font-family: sans-serif;font-weight: 100;color: rgba(5, 120, 85); margin-top: -20px;">Mr Abdul Kufakunoga</h4>
+                                    <h6 class="category text-muted" style="margin-top: -12px">- Branch Manager Tanga -</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="card card-profile card-plain" >
+                                <div class="card-avatar" style="box-shadow: -2px 4px 15px 3px rgba(5, 120, 85,.2);">
+                                    <a >
+                                        <img class="img" src="{{ render_static('assets/img/kit/user_prof.png') }}" style="height: 70px; width: 70px">
+                                    </a>
+                                </div>
+                                <div class="card-body" >
+                                    <h4 class="card-title" style="font-family: sans-serif;font-weight: 100;color: rgba(5, 120, 85); margin-top: -20px;">Mr Dustan Kapaya</h4>
+                                    <h6 class="category text-muted" style="margin-top: -12px">- Branch Manager Singida -</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="card card-profile card-plain" >
+                                <div class="card-avatar" style="box-shadow: -2px 4px 15px 3px rgba(5, 120, 85,.2);">
+                                    <a >
+                                        <img class="img" src="{{ render_static('assets/img/kit/user_prof.png') }}" style="height: 70px; width: 70px">
+                                    </a>
+                                </div>
+                                <div class="card-body" >
+                                    <h4 class="card-title" style="font-family: sans-serif;font-weight: 100;color: rgba(5, 120, 85); margin-top: -20px;">Mr Peter Mitaka</h4>
+                                    <h6 class="category text-muted" style="margin-top: -12px">- Ag. Branch Manager Tabora -</h6>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-3">
+                            <div class="card card-profile card-plain" >
+                                <div class="card-avatar" style="box-shadow: -2px 4px 15px 3px rgba(5, 120, 85,.2);">
+                                    <a >
+                                        <img class="img" src="{{ render_static('assets/img/kit/user_prof.png') }}" style="height: 70px; width: 70px">
+                                    </a>
+                                </div>
+                                <div class="card-body" >
+                                    <h4 class="card-title" style="font-family: sans-serif;font-weight: 100;color: rgba(5, 120, 85); margin-top: -20px;">Mr Lugano Stanton</h4>
+                                    <h6 class="category text-muted" style="margin-top: -12px">- Branch Manager Mwanza -</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="card card-profile card-plain" >
+                                <div class="card-avatar" style="box-shadow: -2px 4px 15px 3px rgba(5, 120, 85,.2);">
+                                    <a >
+                                        <img class="img" src="{{ render_static('assets/img/kit/user_prof.png') }}" style="height: 70px; width: 70px">
+                                    </a>
+                                </div>
+                                <div class="card-body" >
+                                    <h4 class="card-title" style="font-family: sans-serif;font-weight: 100;color: rgba(5, 120, 85); margin-top: -20px;">Mr Azaria Mpolenkile</h4>
+                                    <h6 class="category text-muted" style="margin-top: -12px">- Branch Manager Lindi -</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="card card-profile card-plain" >
+                                <div class="card-avatar" style="box-shadow: -2px 4px 15px 3px rgba(5, 120, 85,.2);">
+                                    <a >
+                                        <img class="img" src="{{ render_static('assets/img/kit/user_prof.png') }}" style="height: 70px; width: 70px">
+                                    </a>
+                                </div>
+                                <div class="card-body" >
+                                    <h4 class="card-title" style="font-family: sans-serif;font-weight: 100;color: rgba(5, 120, 85); margin-top: -20px;">Mr Victor Mleleu</h4>
+                                    <h6 class="category text-muted" style="margin-top: -12px">- Branch Manager Sumbawanga -</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="card card-profile card-plain" >
+                                <div class="card-avatar" style="box-shadow: -2px 4px 15px 3px rgba(5, 120, 85,.2);">
+                                    <a >
+                                        <img class="img" src="{{ render_static('assets/img/kit/user_prof.png') }}" style="height: 70px; width: 70px">
+                                    </a>
+                                </div>
+                                <div class="card-body" >
+                                    <h4 class="card-title" style="font-family: sans-serif;font-weight: 100;color: rgba(5, 120, 85); margin-top: -20px;">Mr Fred Mgessa</h4>
+                                    <h6 class="category text-muted" style="margin-top: -12px">- Branch Manager Shinyanga -</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="card card-profile card-plain" >
+                                <div class="card-avatar" style="box-shadow: -2px 4px 15px 3px rgba(5, 120, 85,.2);">
+                                    <a >
+                                        <img class="img" src="{{ render_static('assets/img/kit/user_prof.png') }}" style="height: 70px; width: 70px">
+                                    </a>
+                                </div>
+                                <div class="card-body" >
+                                    <h4 class="card-title" style="font-family: sans-serif;font-weight: 100;color: rgba(5, 120, 85); margin-top: -20px;">Mr Yusuf Haji</h4>
+                                    <h6 class="category text-muted" style="margin-top: -12px">- Branch Manager Zanzibar -</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="card card-profile card-plain" >
+                                <div class="card-avatar" style="box-shadow: -2px 4px 15px 3px rgba(5, 120, 85,.2);">
+                                    <a >
+                                        <img class="img" src="{{ render_static('assets/img/kit/user_prof.png') }}" style="height: 70px; width: 70px">
+                                    </a>
+                                </div>
+                                <div class="card-body" >
+                                    <h4 class="card-title" style="font-family: sans-serif;font-weight: 100;color: rgba(5, 120, 85); margin-top: -20px;">Mr Fortune Mkonyi</h4>
+                                    <h6 class="category text-muted" style="margin-top: -12px">- Branch Manager Moshi -</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer ">
+    <div class="container">
+        <nav class="pull-left">
+            <ul>
+                <li>
+                    <a href="../index.html" class="sys-color-text">
+                        Home
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="copyright pull-right font-weight-normal sys-color-text" >
+            &copy;
+            <script>
+                document.write(new Date().getFullYear())
+            </script> &nbsp National Insurance Corporation (T) Limited.
+        </div>
+    </div>
+</footer>
+</body>
+</html>
+
+{% include "common/script_links.html.twig" %}

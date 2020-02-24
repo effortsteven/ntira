@@ -1,0 +1,44 @@
+{
+    "name": "devpyjoh/devpyjoh-starter",
+    "description": "",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Peter Nyirenda",
+            "email": "javaxynyirenda@gmail.com",
+            "homepage": "http://www.devpyjoh.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Paul Manoni",
+            "email": "01paulmanoni@gmail.com",
+            "homepage": "http://www.devpyjoh.com",
+            "role": "Developer"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "illuminate/database": "5.1.8",
+        "robmorgan/phinx": "^0.10.6",
+        "symfony/routing": "^4.2",
+        "klein/klein": "^2.1",
+        "twig/twig": "^2.6",
+        "symfony/twig-bridge": "^4.2",
+        "symfony/form": "^4.2",
+        "symfony/security-csrf": "^4.2",
+        "symfony/translation": "^4.2",
+        "symfony/config": "^4.2",
+        "symfony/debug": "^4.2",
+        "symfony/web-profiler-bundle": "v2.4.3",
+        "spatie/image": "^1.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Controllers\\": "app/Controllers",
+            "Models\\": "app/models",
+            "Config\\": "config",
+            "Form\\": "config/form",
+            "System\\": "."
+        }
+    }
+}

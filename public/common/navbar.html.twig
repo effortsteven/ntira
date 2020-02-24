@@ -1,0 +1,101 @@
+<nav class="navbar    fixed-top  navbar-expand-lg "  id="sectionsNav" style="background: white;">
+    <label class="call-us-top">Call Free: 080 011 0041 </label>
+    <div class="container col-lg-12">
+        <div class="navbar-translate col-lg-3 ml-5" id="mainTitle">
+            <a class="navbar-brand nav-a" href="/">
+                <img src="{{ render_static('assets/img/kit/taifa.png') }}" style="margin-top: -5px;margin-right: 3px; margin-left:-5px" class="bland-img">
+                 National Insurance Corporation
+                <img src="{{ render_static('assets/img/kit/nic_2.png') }}" style="margin-top: -5px; margin-right: 0" class="bland-img">
+            </a>
+            <button  class="navbar-toggler navbar-toggler-btn" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation" style="margin-left: 0">
+                <div style="display: inline-block;">
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                </div>
+                <span class="navbar-toggler-title">Menu</span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse col-lg-9">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item {% if full_path() == "/" %} active {% endif %}nav-item-a">
+                    <a href="/" class="nav-link text-center" >
+                                       <span class="nav-a">
+                                            Home
+                                       </span>
+                    </a>
+                </li>
+                <li class="nav-item {% if full_path() == "/about/" %} active {% endif %}  nav-item-a">
+                    <a href="/about/" class="nav-link text-center">
+                                        <span class="nav-a ">
+                                        About Us
+                                       </span>
+                    </a>
+                </li>
+
+                <li class="dropdown {% if (full_path() == "/life_products/") or (full_path() == "/non_life_products/")  %} active {% endif %}  nav-item nav-item-a">
+                    <a href="#" class="nav-link text-center dropdown-toggle" data-toggle="dropdown">
+                                        <span class="nav-a">
+                                        Products
+                                       </span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-with-icons">
+                        <a href="/life_products/" class="dropdown-item {% if (full_path() == "/life_products/") %} active text-white {% endif %}">
+                            <i class="icon-user "></i>&nbsp Life Assurance Products
+                        </a>
+                        <a href="/non_life_products/" class="dropdown-item {% if (full_path() == "/non_life_products/") %} active text-white {% endif %}">
+                            <i class="icon-umbrella"></i>&nbsp  Non-Life Insurance Products
+                        </a>
+                    </div>
+                </li>
+                <li class="dropdown nav-item {% if (full_path() == "/tenders_careers/") or (full_path() == "/testimon/")  %} active {% endif %}  nav-item-a">
+                    <a href="#" class="nav-link text-center dropdown-toggle" data-toggle="dropdown">
+                                        <span class="nav-a">
+                                        Information Centre
+                                       </span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-with-icons">
+                        <a href="/tenders_careers/" class="dropdown-item {% if (full_path() == "/tenders_careers/") %} active text-white {% endif %}">
+                            <i class="icon-clipboard3 "></i>&nbsp Tenders & Careers
+                        </a>
+                        <a href="/testimon/" class="dropdown-item {% if (full_path() == "/testimon/") %} active text-white {% endif %}">
+                            <i class="icon-thumbs-up2"></i>&nbsp  Testimonials
+                        </a>
+                    </div>
+                </li>
+                <li class="dropdown nav-item  {% if (full_path() == "/photos/") or (full_path() == "/videos/")  %} active {% endif %} nav-item-a">
+                    <a href="#" class="nav-link text-center dropdown-toggle" data-toggle="dropdown">
+                                        <span class="nav-a">
+                                        gallery
+                                       </span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-with-icons">
+                        <a href="/photos/" class="dropdown-item {% if (full_path() == "/photos/") %} active text-white {% endif %}">
+                            <i class="icon-images2 "></i>&nbsp Photo Gallery
+                        </a>
+                        <a href="/videos/" class="dropdown-item {% if (full_path() == "/videos/") %} active text-white {% endif %}">
+                            <i class="icon-film4"></i>&nbsp  Video Gallery
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item  {% if full_path() == "/news_and_events/" %} active {% endif %} nav-item-a">
+                    <a href="/news_and_events/" class="nav-link text-center">
+                                        <span class="nav-a">
+                                        News & Events
+                                       </span>
+                    </a>
+                </li>
+                <li class="nav-item {% if full_path() == "/contact/" %} active {% endif %} nav-item-a">
+                    <a href="/contact/" class="nav-link text-center">
+                                        <span class="nav-a">
+                                        Contact Us
+                                       </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
